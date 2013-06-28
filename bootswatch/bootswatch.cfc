@@ -87,7 +87,9 @@ component{
 	// Layout Settings
 	this.settings = [
 		{ name="bootswatchTheme", defaultValue="default", required="false", type="select", label="Bootswatch Theme:", options="Default,Amelia,Cerulean,Cosmo,Cyborg,Flatly,Journal,Readable,Simplex,Slate,Spacelab,Spruce,Superhero,United" },
-		{ name="pageSidebarType", defaultValue="tabs", type="select", label="Page Sidebar Type:", options="Tabs,List" }
+		{ name="pageSidebarType", defaultValue="tabs", type="select", label="Page Sidebar Type:", options="Tabs,List" },
+		{ name="minifyCacheAssets", defaultValue="true", type="boolean", label="Minify/Cache Assets:" },
+		{ name="useLESS", defaultValue="true", type="boolean", label="Use LESS (Requires 'Minify/Cache Assets'):" }
 	];
 
 	/**

@@ -37,8 +37,18 @@
 		<link rel="stylesheet" href="#cb.layoutRoot()#/includes/css/font-awesome/font-awesome.min.css?v=1" />
 		<link rel="stylesheet" href="#cb.layoutRoot()#/includes/css/font-awesome/font-awesome-ie7.min.css?v=1" />
 
-		<!--- Minify & Cache Our Less Assets --->
-		#cb.minify(assets="#cb.layoutRoot()#/includes/css/less/blog.less,#cb.layoutRoot()#/includes/css/less/messagebox.less,#cb.layoutRoot()#/includes/css/less/paging.less,#cb.layoutRoot()#/includes/css/less/breadcrumbs.less", location="#cb.layoutRoot()#/includes/css")#
+		<!--- Minify & Cache Our Assets --->
+		<cfif cb.layoutsetting('minifyCacheAssets',true)>
+			<!--- Use LESS --->
+			<cfif cb.layoutsetting('useLESS',true)>
+				#cb.minify(assets="#cb.layoutRoot()#/includes/css/less/blog.less,#cb.layoutRoot()#/includes/css/less/messagebox.less,#cb.layoutRoot()#/includes/css/less/paging.less,#cb.layoutRoot()#/includes/css/less/breadcrumbs.less", location="#cb.layoutRoot()#/includes/css")#
+			<cfelse>
+				#cb.minify(assets="#cb.layoutRoot()#/includes/css/main.css", location="#cb.layoutRoot()#/includes/css")#
+			</cfif>
+		<cfelse>
+			<!--- Include our unminified, unLESSified, non cached version of the stylesheet --->
+			<link rel="stylesheet" href="#cb.layoutRoot()#/includes/css/main.css?v=1" />
+		</cfif>
 
 		<!--- RSS Stuff --->
 		<link rel="alternate" type="application/rss+xml" title="Recent Updates" href="#cb.linkRSS()#" />
