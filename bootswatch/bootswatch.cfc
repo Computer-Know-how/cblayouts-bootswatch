@@ -77,7 +77,7 @@ component{
 	// Layout Variables
 	this.name 			= "Bootswatch";
 	this.description 	= "Bootswatch layout for ContentBox";
-	this.version		= "1.0";
+	this.version		= "1.1";
 	this.author 		= "Computer Know How";
 	this.authorURL		= "http://www.compknowhow.com";
 	// Screenshot URL, can be absolute or locally in your layout package.
