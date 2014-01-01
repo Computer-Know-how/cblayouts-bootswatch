@@ -11,6 +11,7 @@
 		</title>
 		<meta name="generator" 	 content="ContentBox powered by ColdBox" />
 		<meta name="robots" 	 content="index,follow" />
+		<meta name="description" content="">
 		<meta name="author" content="">
 		<!--- Meta per page or index --->
 		<cfif cb.isEntryView() AND len(cb.getCurrentEntry().getHTMLDescription())>
